@@ -1,0 +1,272 @@
+/* Home.css */
+
+.home-container {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  border-radius: 20px !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 2rem !important;
+  margin: 1rem;
+  position: relative;
+  overflow: hidden;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.home-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  z-index: -1;
+}
+
+/* Welcome section */
+.welcome-section {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.welcome-title {
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  margin-bottom: 1rem !important;
+  letter-spacing: 1px;
+}
+
+.signin-message {
+  color: #f8f9fa !important;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+/* Role selection section */
+.role-selection-container {
+  background: rgba(255, 255, 255, 0.15) !important;
+  border-radius: 20px;
+  padding: 2rem;
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.role-options {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.role-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 2px solid transparent;
+  backdrop-filter: blur(10px);
+  min-width: 120px;
+  position: relative;
+  overflow: hidden;
+}
+
+.role-option::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s;
+}
+
+.role-option:hover::before {
+  left: 100%;
+}
+
+.role-option:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.role-option input[type="radio"] {
+  width: 20px;
+  height: 20px;
+  margin-bottom: 0.5rem;
+  accent-color: #3498db;
+  cursor: pointer;
+}
+
+.role-option label {
+  color: #ffffff !important;
+  font-weight: 600;
+  font-size: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.role-option input[type="radio"]:checked + label {
+  color: #3498db !important;
+  text-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
+}
+
+.role-option:has(input[type="radio"]:checked) {
+  background: rgba(52, 152, 219, 0.2);
+  border-color: #3498db;
+  box-shadow: 0 0 20px rgba(52, 152, 219, 0.3);
+}
+
+/* Error message */
+.error-message {
+  background: rgba(231, 76, 60, 0.2) !important;
+  color: #ffffff !important;
+  padding: 1rem;
+  border-radius: 15px;
+  border: 1px solid rgba(231, 76, 60, 0.4);
+  backdrop-filter: blur(10px);
+  text-align: center;
+  margin-top: 1.5rem;
+  font-weight: 500;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 5px 15px rgba(231, 76, 60, 0.2);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .home-container {
+    margin: 0.5rem;
+    padding: 1.5rem !important;
+    min-height: 350px;
+  }
+  
+  .welcome-title {
+    font-size: 2rem !important;
+  }
+  
+  .signin-message {
+    font-size: 1.1rem;
+  }
+  
+  .role-selection-container {
+    padding: 1.5rem;
+    margin: 0;
+  }
+  
+  .role-options {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .role-option {
+    width: 100%;
+    max-width: 200px;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .home-container {
+    margin: 0.25rem;
+    padding: 1rem !important;
+    border-radius: 15px !important;
+  }
+  
+  .welcome-title {
+    font-size: 1.8rem !important;
+  }
+  
+  .signin-message {
+    font-size: 1rem;
+    padding: 0.75rem;
+  }
+  
+  .role-selection-container {
+    padding: 1rem;
+  }
+  
+  .role-option {
+    padding: 0.75rem;
+    min-width: 100px;
+  }
+  
+  .role-option label {
+    font-size: 0.9rem;
+  }
+}
+
+/* Animation for container entrance */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.home-container {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Loading animation for role selection */
+.role-option.loading {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.role-option.loading::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top: 2px solid #ffffff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* Focus states for accessibility */
+.role-option:focus-within {
+  outline: 2px solid rgba(52, 152, 219, 0.6);
+  outline-offset: 2px;
+}
+
+input[type="radio"]:focus {
+  outline: 2px solid rgba(52, 152, 219, 0.6);
+  outline-offset: 2px;
+}

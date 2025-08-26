@@ -1,0 +1,24 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; 
+}
+
+:root{
+  --royal-blue:#002349;
+  --blue:#96C2DB;
+  --white:#FFFFFF;
+  --black:#000;
+  --grey:#E5EDF1;
+  --cream:#FFFDF2;
+  --red:#E62C2C;
+  --white-smoke:#F0F0F0;
+  --bright-red:#E7473C;
+}
+
+body{
+  background-color: var(--white-smoke);
+}
+html, body, #root {
+  height: 100%;
+}

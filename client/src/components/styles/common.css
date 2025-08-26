@@ -1,0 +1,112 @@
+/* Enhanced Navbar Styles - Works with existing Bootstrap classes */
+
+/* Enhanced bg-dark navbar */
+.navbar.bg-dark {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid #404040;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+/* Navbar brand styling */
+.navbar-brand {
+  font-weight: 700;
+  color: #4f46e5 !important;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.navbar-brand::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #4f46e5;
+  transition: width 0.3s ease;
+}
+
+.navbar-brand:hover {
+  color: #6366f1 !important;
+  transform: translateY(-1px);
+}
+
+.navbar-brand:hover::after {
+  width: 100%;
+}
+
+/* Nav links hover effects */
+.nav-link {
+  color: #b3b3b3 !important;
+  font-weight: 500;
+  padding: 0.75rem 1rem !important;
+  border-radius: 8px;
+  margin: 0 0.25rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s ease;
+}
+
+.nav-link:hover {
+  color: #ffffff !important;
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.nav-link:hover::before {
+  left: 100%;
+}
+
+.nav-link.active {
+  color: #4f46e5 !important;
+  background-color: rgba(79, 70, 229, 0.15);
+  box-shadow: 0 2px 8px rgba(79, 70, 229, 0.3);
+}
+
+/* Navbar toggler enhancements */
+.navbar-toggler {
+  border: 1px solid #404040;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.navbar-toggler:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: scale(1.05);
+  border-color: #4f46e5;
+}
+
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 2px #4f46e5;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 991px) {
+  .nav-link {
+    padding: 0.5rem 0.75rem !important;
+    margin: 0.125rem 0;
+  }
+  
+  .navbar-brand {
+    font-size: 1.25rem;
+  }
+}
+
+/* Smooth animations for all navbar elements */
+.navbar * {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
